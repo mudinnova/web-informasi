@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
+
+const toolIcons = {};
 
 export default function PortfolioNova() {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const [expandedSection, setExpandedSection] = useState(null);
+  const navigate = useNavigate();
 
   const projects = [
     {
@@ -32,49 +35,29 @@ export default function PortfolioNova() {
     },
   ];
 
-  const experienceData = {
-    "UI/UX Designer": [
-      {
-        org: "PT Shabi Lombok Bersaudara",
-        duration: "2023 – Sekarang",
-        tools: "Figma, Adobe XD",
-        desc: "Merancang tampilan website rekrutmen pekerja migran (PMI) dari wireframe, prototipe hingga validasi desain.",
-      },
-      {
-        org: "Freelance – UMKM Lokal",
-        duration: "2023 – 2024",
-        tools: "Figma, Canva, Notion",
-        desc: "Mendesain antarmuka aplikasi dan website UMKM lokal dengan fokus pada kemudahan penggunaan.",
-      },
-    ],
-    "Front-End Developer": [
-      {
-        org: "Bidokkes Polda NTB",
-        duration: "2022 – 2023",
-        tools: "React JS, Tailwind CSS",
-        desc: "Membangun dashboard kesehatan digital internal untuk pengelolaan data tim medis kepolisian.",
-      },
-    ],
-    "Media Sosial & Branding Intern": [
-      {
-        org: "SEAMEO QITEP in Language",
-        duration: "2021 (6 bulan)",
-        tools: "Canva, Meta Business Suite",
-        desc: "Membuat konten promosi edukatif di media sosial lembaga pendidikan regional Asia Tenggara.",
-      },
-    ],
-  };
+  const tools = [
+    "Figma", "Adobe XD", "Photoshop", "Canva", "VSCode", "Tailwind CSS", "React JS", "Illustrator", "Capcut", "Filmora"
+  ];
 
   return (
-    <div className="font-sans bg-gray-50 text-gray-800">
+    <div className="bg-gray-900 text-white font-sans">
       {/* Header */}
       <header className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-10 px-6 text-center">
         <h1 className="text-4xl font-bold mb-2">Muhamad Halimudin Nova</h1>
         <p className="text-xl">UI/UX Designer</p>
         <p className="mt-2 text-sm">Graduate of Informatics Engineering - University of Mataram</p>
+        <div className="mt-4">
+          <a
+            href="/cv/Muhamad_Halimudin_Nova_CV.pdf"
+            download
+            className="inline-block px-4 py-2 bg-indigo-800 text-white rounded-full hover:bg-indigo-900"
+          >
+            Download CV
+          </a>
+        </div>
       </header>
 
-      {/* About Me */}
+      {/* About */}
       <section className="px-6 py-12 max-w-5xl mx-auto" data-aos="fade-up">
         <h2 className="text-2xl font-semibold mb-6 text-center">About Me</h2>
         <p className="text-center leading-relaxed text-lg max-w-3xl mx-auto">
@@ -84,20 +67,35 @@ export default function PortfolioNova() {
         </p>
       </section>
 
+      {/* Tools */}
+      <section className="py-12 px-6" data-aos="fade-up">
+        <h2 className="text-2xl font-semibold text-center mb-6">Tools I Use</h2>
+        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          {tools.map((tool, idx) => (
+            <span
+              key={idx}
+              className="flex items-center gap-2 bg-indigo-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* Projects */}
-      <section className="bg-white py-12 px-6" data-aos="fade-up">
+      <section className="py-12 px-6" data-aos="fade-up">
         <h2 className="text-2xl font-semibold text-center mb-10">Projects</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((proj, i) => (
-            <div key={i} className="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
-              <h3 className="text-xl font-bold mb-2">{proj.title}</h3>
-              <p className="mb-3 text-sm text-gray-700">{proj.desc}</p>
-              <p className="text-xs text-gray-500 mb-1">Tools: {proj.tools.join(", ")}</p>
-              <p className="text-xs text-gray-500 mb-2">Tech: {proj.tech.join(", ")}</p>
+            <div key={i} className="bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
+              <h3 className="text-xl font-bold mb-2 text-white">{proj.title}</h3>
+              <p className="mb-3 text-sm text-gray-300">{proj.desc}</p>
+              <p className="text-xs text-gray-400 mb-1">Tools: {proj.tools.join(", ")}</p>
+              <p className="text-xs text-gray-400 mb-2">Tech: {proj.tech.join(", ")}</p>
               {proj.url && (
                 <a
                   href={proj.url}
-                  className="text-indigo-600 text-sm underline"
+                  className="text-indigo-400 text-sm underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -110,62 +108,73 @@ export default function PortfolioNova() {
       </section>
 
       {/* Experience */}
-      <section className="bg-white py-12 px-6" data-aos="fade-up">
+      <section className="py-12 px-6" data-aos="fade-up">
         <h2 className="text-3xl font-semibold text-center mb-12">Experience</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {Object.entries(experienceData).map(([title, items], idx) => {
-            const isOpen = expandedSection === title;
-            return (
-              <div
-                key={idx}
-                className="bg-gray-100 relative p-6 rounded-2xl shadow hover:shadow-lg transition cursor-pointer min-h-[220px] overflow-hidden"
-                onClick={() => setExpandedSection(isOpen ? null : title)}
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600">
-                  {isOpen ? "Sembunyikan Detail" : "Tampilkan Detail"}
-                </p>
-                <div
-                  className={`absolute left-0 top-0 w-full h-full bg-gray-100 p-6 rounded-2xl transition-opacity duration-300 ${
-                    isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-                  } overflow-y-auto z-10`}
-                >
-                  <div onClick={(e) => e.stopPropagation()}>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-                    <p className="text-sm text-indigo-600 mb-4 cursor-pointer" onClick={() => setExpandedSection(null)}>
-                      Tutup Detail
-                    </p>
-                    {items.map((item, i) => (
-                      <div key={i} className="mt-2 border-t pt-4 text-sm text-gray-700">
-                        <p className="font-semibold">{item.org}</p>
-                        <p className="italic text-xs text-gray-500 mb-1">{item.duration}</p>
-                        <p className="text-xs text-gray-600">
-                          <strong>Tools:</strong> {item.tools}
-                        </p>
-                        <p className="text-xs text-gray-600">
-                          <strong>Deskripsi:</strong> {item.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          <div onClick={() => navigate("/UI/UXDesigner")} className="cursor-pointer bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-2 text-white">UI/UX Designer</h3>
+            <p className="text-sm text-gray-400">Klik untuk lihat detail</p>
+          </div>
+          <div onClick={() => navigate("/Front-End")} className="cursor-pointer bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-2 text-white">Front-End Developer</h3>
+            <p className="text-sm text-gray-400">Klik untuk lihat detail</p>
+          </div>
+          <div onClick={() => navigate("/Medsos")} className="cursor-pointer bg-gray-800 p-6 rounded-2xl shadow hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold mb-2 text-white">Media Sosial & Branding Intern</h3>
+            <p className="text-sm text-gray-400">Klik untuk lihat detail</p>
+          </div>
         </div>
       </section>
+
+      {/* Achievements & Certifications */}
+      <section className="py-12 px-6" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold text-center mb-8">Achievements & Certifications</h2>
+        <div className="max-w-5xl mx-auto space-y-6 text-gray-300">
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              🏆 Juara 2 MTQ Mahasiswa Nasional - Desain Aplikasi Komputer Al-Qur’an (2023)
+            </li>
+            <li>
+              🥉 Juara 3 Lomba Fotografi Nasional Stikzarfest (2023)
+            </li>
+            <li>
+              🎓 Sertifikat UI/UX Design - Rakamin.ID
+            </li>
+            <li>
+              📜 Sertifikat MSIB Magang Web Design - SEAMEO QITEP in Language
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Language Skills */}
+      <section className="py-12 px-6" data-aos="fade-up">
+        <h2 className="text-3xl font-semibold text-center mb-8">Language Proficiency</h2>
+        <div className="flex flex-col items-center text-gray-300">
+          <ul className="list-none space-y-2 text-center">
+            <li>🇮🇩 Bahasa Indonesia – Native</li>
+            <li>🇬🇧 English – Intermediate (Conversational & Writing)</li>
+          </ul>
+        </div>
+      </section>
+
 
       {/* Contact */}
       <section className="py-12 px-6 text-center" data-aos="fade-up">
         <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
-        <p className="mb-4">Get in touch so we can talk more</p>
-        <button className="bg-indigo-600 text-white px-6 py-2 rounded-full shadow hover:bg-indigo-700 transition">
-          Contact Me
-        </button>
+        <p className="mb-4">Feel free to reach out via email or social media.</p>
+        <div className="flex flex-wrap justify-center gap-4 text-indigo-400">
+          <a href="mailto:nova@email.com" className="hover:underline">nova@email.com</a>
+          <a href="https://linkedin.com/in/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</a>
+          <a href="https://instagram.com/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+          <a href="https://tiktok.com/@halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">TikTok</a>
+          <a href="https://facebook.com/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-200 text-center py-4 text-sm text-gray-600">
+      <footer className="bg-gray-800 text-center py-4 text-sm text-gray-400">
         © 2025 Muhamad Halimudin Nova. All rights reserved.
       </footer>
     </div>
