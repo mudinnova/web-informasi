@@ -17,14 +17,14 @@ export default function PortfolioNova() {
       title: "PT SHABI LOMBOK BERSAUDARA",
       desc: "Website untuk informasi lowongan kerja luar negeri & pendaftaran pekerja migran.",
       tools: ["Figma", "Photoshop", "VSCode"],
-      tech: ["UI Design", "UX Design", "React JS"],
+      tech: ["UI Design", "UX Design", "React JS", " Tailwind CSS"],
       url: "https://www.Shabilombokbersaudara.com",
     },
     {
       title: "AkuSehat",
       desc: "Website administrasi FKTP terintegrasi BPJS untuk manajemen data pasien.",
       tools: ["Figma", "Photoshop", "VSCode"],
-      tech: ["UI Design", "UX Design", "React JS"],
+      tech: ["UI Design", "UX Design", "React JS", " Tailwind CSS"],
       url: "https://www.AkuSehat.com",
     },
     {
@@ -41,21 +41,45 @@ export default function PortfolioNova() {
 
   return (
     <div className="bg-gray-900 text-white font-sans">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-10 px-6 text-center">
-        <h1 className="text-4xl font-bold mb-2">Muhamad Halimudin Nova</h1>
-        <p className="text-xl">UI/UX Designer</p>
-        <p className="mt-2 text-sm">Graduate of Informatics Engineering - University of Mataram</p>
-        <div className="mt-4">
-          <a
-            href="/cv/Muhamad_Halimudin_Nova_CV.pdf"
-            download
-            className="inline-block px-4 py-2 bg-indigo-800 text-white rounded-full hover:bg-indigo-900"
-          >
-            Download CV
-          </a>
+      <header className="relative text-white py-20 px-6 overflow-hidden">
+        {/* Background image with blur and opacity */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-50 blur-sm"
+          style={{ backgroundImage: "url('/LinkedIn.png')" }}
+        ></div>
+
+        {/* Overlay content */}
+        <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Text content */}
+          <div className="text-center md:text-left md:w-1/2">
+            <h1 className="text-6xl font-bold mb-4">Muhamad Halimudin Nova</h1>
+            <p className="text-xl">UI/UX Designer | Front-End Developer | Social Media </p>
+            <p className="mt-2 text-sm">
+              Graduate of Informatics Engineering - University of Mataram
+            </p>
+            <div className="mt-4">
+              <a
+                href="/cv/Muhamad Halimudin Nova.pdf"
+                download
+                className="inline-block px-4 py-2 bg-indigo-700 text-white rounded-full hover:bg-indigo-900"
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
+
+          {/* Profile Image */}
+          <div className="md:w-1/2 flex justify-center items-end mt-3 md:mt-0">
+            <img
+              src="/nova.png"
+              alt="Muhamad Halimudin Nova"
+              className="w-96 h-auto rounded-xl object-cover"
+              style={{ marginBottom: "-6rem" }} // agar lebih turun
+            />
+          </div>
         </div>
       </header>
+
 
       {/* About */}
       <section className="px-6 py-12 max-w-5xl mx-auto" data-aos="fade-up">
@@ -131,18 +155,24 @@ export default function PortfolioNova() {
         <h2 className="text-3xl font-semibold text-center mb-8">Achievements & Certifications</h2>
         <div className="max-w-5xl mx-auto space-y-6 text-gray-300">
           <ul className="list-disc pl-6 space-y-2">
-            <li>
-              🏆 Juara 2 MTQ Mahasiswa Nasional - Desain Aplikasi Komputer Al-Qur’an (2023)
-            </li>
-            <li>
-              🥉 Juara 3 Lomba Fotografi Nasional Stikzarfest (2023)
-            </li>
-            <li>
-              🎓 Sertifikat UI/UX Design - Rakamin.ID
-            </li>
-            <li>
-              📜 Sertifikat MSIB Magang Web Design - SEAMEO QITEP in Language
-            </li>
+            <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-white">
+              <li>
+                🏆 Juara 2 MTQ Mahasiswa Nasional – Desain Aplikasi Komputer Al-Qur’an (2023)
+              </li>
+              <li>
+                🥉 Juara 3 Lomba Fotografi Nasional Stikzarfest (2023)
+              </li>
+              <li>
+                🎓 Sertifikat UI/UX Design – Rakamin.ID
+              </li>
+              <li>
+                🎤 Speaker at Mandalika International MultiConference on Science and Engineering
+              </li>
+              <li>
+                📜 Sertifikat MSIB Magang Web Design – SEAMEO QITEP in Language
+              </li>
+            </ul>
+
           </ul>
         </div>
       </section>
@@ -159,24 +189,29 @@ export default function PortfolioNova() {
       </section>
 
 
-      {/* Contact */}
-      <section className="py-12 px-6 text-center" data-aos="fade-up">
-        <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
-        <p className="mb-4">Feel free to reach out via email or social media.</p>
-        <div className="flex flex-wrap justify-center gap-4 text-indigo-400">
-          <a href="mailto:nova@email.com" className="hover:underline">nova@email.com</a>
-          <a href="https://linkedin.com/in/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</a>
-          <a href="https://instagram.com/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
-          <a href="https://tiktok.com/@halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">TikTok</a>
-          <a href="https://facebook.com/halimudinnova" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a>
-        </div>
-      </section>
+      <section className="relative py-12 px-6 text-center overflow-hidden" data-aos="fade-up">
+  {/* Background awan animasi */}
+  <div className="absolute inset-0 bg-[url('/clouds.svg')] bg-cover bg-repeat animate-cloud-move opacity-30 z-0"></div>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-center py-4 text-sm text-gray-400">
-        © 2025 Muhamad Halimudin Nova. All rights reserved.
-      </footer>
+  {/* Konten utama */}
+  <div className="relative z-10">
+    <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
+    <p className="mb-4">Feel free to reach out via email or social media.</p>
+    <div className="flex flex-wrap justify-center gap-4 text-indigo-400">
+      <a href="mailto:mudinnova15@email.com" className="hover:underline">mudinnova15@email.com</a>
+      <a href="https://www.linkedin.com/in/muhamad-halimudin-nova-101844263/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+      <a href="https://wa.me/6287869854154" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</a>
+      <a href="https://www.instagram.com/_casanova03/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+      <a href="https://www.tiktok.com/@mhn_nova?_t=ZS-8xSinSAmYdj&_r=1" target="_blank" rel="noopener noreferrer" className="hover:underline">TikTok</a>
+      <a href="https://www.facebook.com/m.nova.73" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer className="bg-gray-800 text-center py-4 text-sm text-gray-400">
+  © 2025 Muhamad Halimudin Nova. All rights reserved.
+</footer>
+
     </div>
   );
 }

@@ -28,31 +28,24 @@ export default function FrontEnd() {
         "Mendesain antarmuka aplikasi AkuSehat untuk sistem administrasi FKTP terintegrasi BPJS.",
       tools: ["html", "css", "javascript", "react", "tailwind css"],
     },
-    {
-      company: "Freelance – Front-End Developer",
-      role: "Front-End Developer",
-      duration: "2021 – 2024",
-      description:
-        "Mendesain antarmuka aplikasi dan website  dengan fokus pada kemudahan penggunaan.",
-      tools: ["html", "css", "javascript", "react", "tailwind css"],
-    },
+
   ];
 
   const gallery = [
     {
       title: "Website PT Shabi Lombok Bersaudara",
-      image: "/images/uiux/shabi.png",
+      image: "/shabi.png",
       description: "Desain antarmuka website lowongan kerja dan rekrutmen PMI",
     },
     {
       title: "AkuSehat FKTP BPJS",
-      image: "/images/uiux/akusehat.png",
+      image: "/fktp.png",
       description: "Desain sistem administrasi terintegrasi untuk FKTP",
     },
     {
-      title: "Al-Qur’an Inspire (MTQM)",
-      image: "/images/uiux/quran.png",
-      description: "UI redesign untuk aplikasi Qur’an pada lomba MTQM",
+      title: "Seameo Qitep In Language",
+      image: "/Seameo.png",
+      description: "Desain antarmuka aplikasi absensi mahasiswa berbasis web",
     },
   ];
 
