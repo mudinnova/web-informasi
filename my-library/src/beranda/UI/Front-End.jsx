@@ -1,51 +1,50 @@
 import React from "react";
 
 export default function FrontEnd() {
-  const tools = ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS",];
-  
+  const tools = ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"];
+
   const groupedExperience = [
     {
       company: "PT Shabi Lombok Bersaudara",
       role: "Front-End Developer",
-      duration: "Desember 2024 – Sekarang",
+      duration: "December 2024 – Present",
       description:
-        "Merancang tampilan website rekrutmen pekerja migran dari wireframe, prototipe hingga validasi desain.",
-      tools: ["html", "css", "javascript", "react", "tailwind css"],
+        "Designing the recruitment website interface for migrant workers from wireframe, prototype to design validation.",
+      tools: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
     },
     {
       company: "Bidokkes Polda NTB",
       role: "Front-End Developer",
-      duration: "Maret – Oktober 2024",
+      duration: "March – October 2024",
       description:
-        "Mendesain antarmuka aplikasi AkuSehat untuk sistem administrasi FKTP terintegrasi BPJS.",
-      tools: ["html", "css", "javascript", "react", "tailwind css"],
+        "Designing the AkuSehat application interface for the integrated BPJS FKTP administration system.",
+      tools: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
     },
     {
-      company: "Seameo Qitep In Langugage",
-      role: "Web Designer Publikasi Karya Literasi",
-      duration: "Agustus – Desember 2023",
+      company: "Seameo Qitep In Language",
+      role: "Web Designer for Literacy Publication Works",
+      duration: "August – December 2023",
       description:
-        "Mendesain antarmuka aplikasi AkuSehat untuk sistem administrasi FKTP terintegrasi BPJS.",
-      tools: ["html", "css", "javascript", "react", "tailwind css"],
+        "Designing the AkuSehat application interface for the integrated BPJS FKTP administration system.",
+      tools: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
     },
-
   ];
 
   const gallery = [
     {
-      title: "Website PT Shabi Lombok Bersaudara",
+      title: "PT Shabi Lombok Bersaudara Website",
       image: "/shabi.png",
-      description: "Desain antarmuka website lowongan kerja dan rekrutmen PMI",
+      description: "Interface design for the job vacancy and migrant worker recruitment website.",
     },
     {
       title: "AkuSehat FKTP BPJS",
       image: "/fktp.png",
-      description: "Desain sistem administrasi terintegrasi untuk FKTP",
+      description: "Integrated administration system design for FKTP.",
     },
     {
       title: "Seameo Qitep In Language",
       image: "/Seameo.png",
-      description: "Desain antarmuka aplikasi absensi mahasiswa berbasis web",
+      description: "Interface design for a web-based student attendance application.",
     },
   ];
 
@@ -84,7 +83,7 @@ export default function FrontEnd() {
               <h3 className="text-xl font-bold text-indigo-400">{exp.company}</h3>
               <p className="text-sm italic text-gray-300 mb-2">{exp.role} | {exp.duration}</p>
               <p className="text-sm text-gray-200 mb-1">
-                <strong>Deskripsi:</strong> {exp.description}
+                <strong>Description:</strong> {exp.description}
               </p>
               <p className="text-sm text-gray-300">
                 <strong>Tools:</strong> {exp.tools.join(", ")}

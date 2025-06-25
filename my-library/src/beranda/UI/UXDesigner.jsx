@@ -1,34 +1,34 @@
 import React, { useState } from "react";
 
-// Data Galeri UI/UX Projects
+// UI/UX Project Gallery Data
 const galleryData = [
   {
-    title: "Website PT Shabi Lombok Bersaudara",
+    title: "PT Shabi Lombok Bersaudara Website",
     image: "/shabi.png",
-    description: "Desain antarmuka website lowongan kerja dan rekrutmen PMI",
+    description: "Interface design for job recruitment and PMI application website",
     details: ["/shabi/1.png", "/shabi/2.png", "/shabi/3.png", "/shabi/4.png", "/shabi/5.png", "/shabi/6.png"]},
   {
     title: "AkuSehat FKTP BPJS",
     image: "/fktp.png",
-    description: "Desain sistem administrasi terintegrasi untuk FKTP",
-    details: ["/fktp/1.png", "/fktp/2.png", "/fktp/3.png", "/fktp/4.png", "/fktp/6.png", "/fktp/5.png", ]
+    description: "Integrated administration system design for FKTP",
+    details: ["/fktp/1.png", "/fktp/2.png", "/fktp/3.png", "/fktp/4.png", "/fktp/6.png", "/fktp/5.png"]
   },
   {
-    title: "Absensi Mahasiswa MSIB",
+    title: "MSIB Student Attendance",
     image: "/Seameo.png",
-    description: "Desain aplikasi absensi berbasis web.",
+    description: "Web-based student attendance app interface design.",
     details: ["/seaqil/1.png", "/seaqil/2.png", "/seaqil/3.png", "/seaqil/4.png", "/seaqil/5.png", "/seaqil/6.png", "/seaqil/7.png", "/seaqil/8.png", "/seaqil/9.png", "/seaqil/10.png"]
   },
   {
     title: "Al-Qur'an Inspire",
     image: "/1.png",
-    description: "Desain aplikasi Qur'an dengan fitur inovatif.",
+    description: "Qur'an application design with innovative features.",
     details: ["/alquran/2.png", "/alquran/3.png", "/alquran/4.png", "/alquran/5.png", "/alquran/6.png", "/alquran/7.png", "/alquran/8.png", "/alquran/9.png", "/alquran/10.png"]
   },
   {
     title: "Freelance UI/UX Projects",
     image: "/freelance/cover.png",
-    description: "Berbagai proyek desain antarmuka aplikasi dan website.",
+    description: "Various UI/UX design projects for apps and websites.",
     details: ["/freelance/1.png", "/freelance/2.png", "/freelance/3.png", "/freelance/4.png", "/freelance/5.png", "/freelance/6.png", "/freelance/7.png", "/freelance/8.png", "/freelance/9.png", "/freelance/10.png"]
   }
 ];
@@ -43,41 +43,41 @@ export default function UIUXExperience() {
     {
       company: "PT Shabi Lombok Bersaudara",
       role: "UI/UX Designer",
-      duration: "Desember 2023 – Sekarang",
+      duration: "December 2023 – Present",
       description:
-        "Merancang tampilan website rekrutmen pekerja migran dari wireframe, prototipe hingga validasi desain.",
+        "Designed recruitment website from wireframe, prototype, to design validation.",
       tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Bidokkes Polda NTB",
       role: "UI/UX Designer",
-      duration: "Maret – Oktober 2024",
+      duration: "March – October 2024",
       description:
-        "Mendesain antarmuka aplikasi AkuSehat untuk sistem administrasi FKTP terintegrasi BPJS.",
+        "Designed UI for AkuSehat application, integrated with BPJS for FKTP admin system.",
       tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
-      company: "Absensi Mahasiswa MSIB di Seameo Qitep in Language berbasis Web",
+      company: "MSIB Student Attendance at SEAMEO QITEP in Language",
       role: "UI/UX Designer",
-      duration: "Agustus – Desember 2023",
+      duration: "August – December 2023",
       description:
-        "Mendesain antarmuka aplikasi absensi mahasiswa berbasis web untuk memudahkan pengelolaan data kehadiran.",
+        "Designed web-based student attendance interface for streamlined presence management.",
       tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Al-Qur'an Inspire",
       role: "UI/UX Designer",
-      duration: "Januari – Maret 2023",
+      duration: "January – March 2023",
       description:
-        "Mendesain antarmuka aplikasi Qur'an dengan fitur inspiratif dan interaktif.",
+        "Designed Qur'an application with interactive and inspirational features.",
       tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Freelance – UI/UX Designer",
       role: "UI/UX Designer",
-      duration: "Juli 2021 – Desember 2024",
+      duration: "July 2021 – December 2024",
       description:
-        "Mendesain antarmuka aplikasi dan website dengan fokus pada kemudahan penggunaan.",
+        "Designed intuitive application and website interfaces with a focus on usability.",
       tools: ["Figma", "Adobe XD", "Canva", "Photoshop"]
     }
   ];
@@ -131,7 +131,7 @@ export default function UIUXExperience() {
               <h3 className="text-xl font-bold text-indigo-400">{exp.company}</h3>
               <p className="text-sm italic text-gray-300 mb-2">{exp.role} | {exp.duration}</p>
               <p className="text-sm text-gray-200 mb-1">
-                <strong>Deskripsi:</strong> {exp.description}
+                <strong>Description:</strong> {exp.description}
               </p>
               <p className="text-sm text-gray-300">
                 <strong>Tools:</strong> {exp.tools.join(", ")}
