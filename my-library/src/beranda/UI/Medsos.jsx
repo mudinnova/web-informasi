@@ -18,19 +18,19 @@ export default function Medsos() {
 
   const gallery = [
     {
-      title: "Forum Mahasiswa Pemerhati Sosial Lombok Timur",
-      image: "/images/uiux/shabi.png",
-      description: "Pengelolaan Media Sosial",
+      title: "Pengelolaan Media Sosial",
+      image: "/medsos/medsos.jpg",
+      description: " Strategi dan Manajemen Konten untuk Media Sosial",
     },
     {
       title: "Desainer Grafis",
-      image: "/images/uiux/akusehat.png",
-      description: "Desain Konten Media Sosial Instagram",
+      image: "/medsos/desain.jpg",
+      description: "Pembuatan Konten Visual untuk Media Sosial, Poster, dan Infografis",
     },
     {
       title: "Dokumentasi Foto & Video",
-      image: "/images/uiux/quran.png",
-      description: "Pengambilan dan Pengeditan Foto & Video Kegiatan, serta Pembuatan Konten",
+      image: "/medsos/foto.jpg",
+      description: "Pengambilan dan Pengeditan Foto serta Video untuk Media Sosial",
     },
   ];
 
@@ -106,7 +106,7 @@ export default function Medsos() {
 
       {/* Gallery */}
       <section className="py-12 px-6 bg-gray-900">
-        <h2 className="text-2xl font-semibold text-center mb-10">UI/UX Project Gallery</h2>
+        <h2 className="text-2xl font-semibold text-center mb-10">Gallery Kegiatan</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {gallery.map((proj, i) => (
             <div
@@ -140,6 +140,24 @@ export default function Medsos() {
           </ul>
         </div>
       </section>
+      <section className="relative py-12 px-6 text-center overflow-hidden" data-aos="fade-up">
+  {/* Background awan animasi */}
+  <div className="absolute inset-0 bg-[url('/clouds.svg')] bg-cover bg-repeat animate-cloud-move opacity-30 z-0"></div>
+
+  {/* Konten utama */}
+  <div className="relative z-10">
+    <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
+    <p className="mb-4">Feel free to reach out via email or social media.</p>
+    <div className="flex flex-wrap justify-center gap-4 text-indigo-400">
+      <a href="mailto:mudinnova15@email.com" className="hover:underline">mudinnova15@email.com</a>
+      <a href="https://www.linkedin.com/in/muhamad-halimudin-nova-101844263/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+      <a href="https://wa.me/6287869854154" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</a>
+      <a href="https://www.instagram.com/_casanova03/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+      <a href="https://www.tiktok.com/@mhn_nova?_t=ZS-8xSinSAmYdj&_r=1" target="_blank" rel="noopener noreferrer" className="hover:underline">TikTok</a>
+      <a href="https://www.facebook.com/m.nova.73" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-950 text-center py-4 text-sm text-gray-500 mt-10">

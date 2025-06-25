@@ -1,7 +1,41 @@
 import React, { useState } from "react";
 
+// Data Galeri UI/UX Projects
+const galleryData = [
+  {
+    title: "Website PT Shabi Lombok Bersaudara",
+    image: "/shabi.png",
+    description: "Desain antarmuka website lowongan kerja dan rekrutmen PMI",
+    details: ["/shabi/1.png", "/shabi/2.png", "/shabi/3.png", "/shabi/4.png", "/shabi/5.png", "/shabi/6.png"]},
+  {
+    title: "AkuSehat FKTP BPJS",
+    image: "/fktp.png",
+    description: "Desain sistem administrasi terintegrasi untuk FKTP",
+    details: ["/fktp/1.png", "/fktp/2.png", "/fktp/3.png", "/fktp/4.png", "/fktp/6.png", "/fktp/5.png", ]
+  },
+  {
+    title: "Absensi Mahasiswa MSIB",
+    image: "/Seameo.png",
+    description: "Desain aplikasi absensi berbasis web.",
+    details: ["/seaqil/1.png", "/seaqil/2.png", "/seaqil/3.png", "/seaqil/4.png", "/seaqil/5.png", "/seaqil/6.png", "/seaqil/7.png", "/seaqil/8.png", "/seaqil/9.png", "/seaqil/10.png"]
+  },
+  {
+    title: "Al-Qur'an Inspire",
+    image: "/1.png",
+    description: "Desain aplikasi Qur'an dengan fitur inovatif.",
+    details: ["/alquran/2.png", "/alquran/3.png", "/alquran/4.png", "/alquran/5.png", "/alquran/6.png", "/alquran/7.png", "/alquran/8.png", "/alquran/9.png", "/alquran/10.png"]
+  },
+  {
+    title: "Freelance UI/UX Projects",
+    image: "/freelance/cover.png",
+    description: "Berbagai proyek desain antarmuka aplikasi dan website.",
+    details: ["/freelance/1.png", "/freelance/2.png", "/freelance/3.png", "/freelance/4.png", "/freelance/5.png", "/freelance/6.png", "/freelance/7.png", "/freelance/8.png", "/freelance/9.png", "/freelance/10.png"]
+  }
+];
+
 export default function UIUXExperience() {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
 
   const tools = ["Figma", "Adobe XD", "Canva", "Notion", "Photoshop"];
 
@@ -12,7 +46,7 @@ export default function UIUXExperience() {
       duration: "Desember 2023 – Sekarang",
       description:
         "Merancang tampilan website rekrutmen pekerja migran dari wireframe, prototipe hingga validasi desain.",
-      tools: ["Figma", "Adobe XD", "Photoshop"],
+      tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Bidokkes Polda NTB",
@@ -20,7 +54,7 @@ export default function UIUXExperience() {
       duration: "Maret – Oktober 2024",
       description:
         "Mendesain antarmuka aplikasi AkuSehat untuk sistem administrasi FKTP terintegrasi BPJS.",
-      tools: ["Figma",  "Adobe XD", "Photoshop"],
+      tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Absensi Mahasiswa MSIB di Seameo Qitep in Language berbasis Web",
@@ -28,61 +62,38 @@ export default function UIUXExperience() {
       duration: "Agustus – Desember 2023",
       description:
         "Mendesain antarmuka aplikasi absensi mahasiswa berbasis web untuk memudahkan pengelolaan data kehadiran.",
-      tools: ["Figma",  "Adobe XD", "Photoshop"],
+      tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Al-Qur'an Inspire",
       role: "UI/UX Designer",
       duration: "Januari – Maret 2023",
       description:
-        "Mendesain antarmuka aplikasi absensi mahasiswa berbasis web untuk memudahkan pengelolaan data kehadiran.",
-      tools: ["Figma",  "Adobe XD", "Photoshop"],
+        "Mendesain antarmuka aplikasi Qur'an dengan fitur inspiratif dan interaktif.",
+      tools: ["Figma", "Adobe XD", "Photoshop"]
     },
     {
       company: "Freelance – UI/UX Designer",
       role: "UI/UX Designer",
-      duration: " Juli 2021 – Desember 2024",
+      duration: "Juli 2021 – Desember 2024",
       description:
         "Mendesain antarmuka aplikasi dan website dengan fokus pada kemudahan penggunaan.",
-      tools: ["Figma", "Adobe XD", "Canva", "Photoshop"],
-    },
+      tools: ["Figma", "Adobe XD", "Canva", "Photoshop"]
+    }
   ];
 
-  const gallery = [
-    {
-      title: "Website PT Shabi Lombok Bersaudara",
-      image: "/shabi.png",
-      description: "Desain antarmuka website lowongan kerja dan rekrutmen PMI",
-      details: ["/shabi1.png", "/shabi2.png"],
-    },
-    {
-      title: "AkuSehat FKTP BPJS",
-      image: "/fktp.png",
-      description: "Desain sistem administrasi terintegrasi untuk FKTP",
-      details: ["/fktp1.png", "/fktp2.png"],
-    },
-    {
-      title: "Absensi Mahasiswa MSIB",
-      image: "/Seameo.png",
-      description: "Desain aplikasi absensi berbasis web.",
-      details: ["/seameo1.png", "/seameo2.png"],
-    },
-    {
-      title: "Al-Qur'an Inspire",
-      image: "/quran.png",
-      description: "Desain aplikasi Qur'an dengan fitur inovatif.",
-      details: ["/quran1.png", "/quran2.png"],
-    },
-    {
-      title: "Freelance UI/UX Projects",
-      image: "/freelance.png",
-      description: "Berbagai proyek desain antarmuka aplikasi dan website.",
-      details: ["/freelance1.png", "/freelance2.png"],
-    },
-  ];
+  const gallery = galleryData;
 
   const handleSelectGallery = (index) => {
     setActiveGalleryIndex(index === activeGalleryIndex ? null : index);
+  };
+
+  const openModal = (img) => {
+    setModalImage(img);
+  };
+
+  const closeModal = () => {
+    setModalImage(null);
   };
 
   return (
@@ -157,18 +168,41 @@ export default function UIUXExperience() {
       {/* Horizontal Detail Gallery */}
       {activeGalleryIndex !== null && (
         <section className="px-6 pb-12 bg-gray-900">
-          <h3 className="text-xl font-semibold text-center mb-4 text-indigo-400">Detail Preview: {gallery[activeGalleryIndex].title}</h3>
+          <h3 className="text-xl font-semibold text-center mb-4 text-indigo-400">
+            Detail Preview: {gallery[activeGalleryIndex].title}
+          </h3>
           <div className="flex overflow-x-auto space-x-4 scrollbar-thin scrollbar-thumb-gray-600 px-2">
             {gallery[activeGalleryIndex].details.map((img, idx) => (
               <img
                 key={idx}
                 src={img}
                 alt={`Detail ${idx + 1}`}
-                className="h-52 w-80 object-cover rounded-lg flex-shrink-0"
+                onClick={() => openModal(img)}
+                className=" w-96 h-96 object-cover rounded-lg flex-shrink-0 cursor-pointer hover:scale-105 transition"
               />
             ))}
           </div>
         </section>
+      )}
+
+      {/* Modal Fullscreen Preview */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <img
+            src={modalImage}
+            alt="Full Preview"
+            className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+          />
+          <button
+            onClick={closeModal}
+            className="absolute top-6 right-6 text-white text-3xl font-bold"
+          >
+            &times;
+          </button>
+        </div>
       )}
 
       {/* Footer */}

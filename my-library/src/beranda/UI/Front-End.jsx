@@ -96,7 +96,7 @@ export default function FrontEnd() {
 
       {/* Gallery */}
       <section className="py-12 px-6 bg-gray-900">
-        <h2 className="text-2xl font-semibold text-center mb-10">UI/UX Project Gallery</h2>
+        <h2 className="text-2xl font-semibold text-center mb-10">Website</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {gallery.map((proj, i) => (
             <div
